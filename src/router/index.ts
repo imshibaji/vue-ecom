@@ -1,6 +1,6 @@
-import DashboardView from '@/views/admin/DashboardView.vue'
-import Home from '@/views/Front/HomeView.vue'
-import { createRouter, createWebHistory } from 'vue-router'
+import DashboardView from '@/views/admin/DashboardView.vue';
+import Home from '@/views/front/HomeView.vue';
+import { createRouter, createWebHistory } from 'vue-router';
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -19,6 +19,16 @@ const router = createRouter({
       component: () => import('@/views/front/AboutView.vue')
     },
     {
+      path: '/products',
+      name: 'products',
+      component: () => import('@/views/front/ProductsView.vue')
+    },
+    {
+      path: '/contact',
+      name: 'contact',
+      component: () => import('@/views/front/ContactView.vue')
+    },
+    {
       path: '/admin',
       name: 'Admin',
       children: [
@@ -31,6 +41,11 @@ const router = createRouter({
           path: 'products',
           name: 'Products',
           component: () => import('@/views/admin/ProductsView.vue')
+        },
+        {
+          path: 'products/:id',
+          name: 'Product',
+          component: () => import('@/views/admin/ProductDetailsView.vue')
         }
       ]
     }

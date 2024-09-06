@@ -1,9 +1,8 @@
-<script setup lang="ts">
+<script setup>
 import Layout from '@/components/FrontLayout.vue';
 </script>
-
 <template>
-<Layout title="About Page">
-    <h1>About Page</h1>
+<Layout>
+    <h1>Contacts</h1>
 </Layout>
 </template>
